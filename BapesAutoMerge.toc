@@ -1,3 +1,8 @@
+
+## Title: Bapes Auto Merge
+## Version: 1.0
+## Author: Bapes
+## Notes: Auto merge rousing elements into awakened.
 ## Interface: 100005
 ## Interface-Retail: 100005
 ## Interface-Classic: 11403
