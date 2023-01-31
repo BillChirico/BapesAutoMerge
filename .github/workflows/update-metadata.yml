@@ -13,6 +13,9 @@ on:
 jobs:
   run:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./src
     steps:
       - name: Clone
         uses: actions/checkout@v3.3.0
