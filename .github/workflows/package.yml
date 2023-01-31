@@ -8,16 +8,19 @@ on:
     branches: [ "master" ]
 
 jobs:
-  run:
+  publish:
     runs-on: ubuntu-latest
+    
+    env:
+      CF_API_KEY: ${{ secrets.CF_API_KEY }}
+      GITHUB_OAUTH: ${{ secrets.GITHUB_TOKEN }}
+      
     steps:
       - name: Clone
         uses: actions/checkout@v3.3.0
 
       - name: Package
         uses: BigWigsMods/packager@v2.0.3
-        with:
-           args: -d false 
 
       - uses: actions/upload-artifact@v3.1.2
         with:
