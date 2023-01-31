@@ -1,0 +1,35 @@
+name: Bundle & Package
+
+on:
+  push:
+    branches: [ "master" ]
+    
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone
+        uses: actions/checkout@v3.3.0
+        with:
+          fetch-depth: 0
+        
+      - name: Set Working Directory
+        run: |
+          cd ./src
+          ls
+
+      - name: Update TOC
+        uses: p3lim/toc-interface-updater@v2
+        with:
+          base: mainline
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v4.2.3
+        with:
+          title: Update TOC
+          commit-message: Update TOC
+          branch: update-toc
+          delete-branch: true
