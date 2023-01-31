@@ -1,5 +1,5 @@
 ## Title: BapesAutoMerge
-## Version: 1.0.0
+## Version: @project-version@
 ## Author: Bapes
 ## Notes: Auto merge rousing elements into awakened.
 ## Interface: 100005
