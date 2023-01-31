@@ -21,3 +21,9 @@ jobs:
 
       - name: Package
         uses: BigWigsMods/packager@v2.0.3
+
+      - uses: actions/upload-artifact@v3.1.2
+        with:
+          name: Addon
+          path: | 
+            *.zip
