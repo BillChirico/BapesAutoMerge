@@ -4,12 +4,6 @@ on:
   schedule:
     - cron: 0 12 * * *
     
-  push:
-    branches: [ "master" ]
-    
-  pull_request:
-    branches: [ "master" ]
-
 jobs:
   run:
     runs-on: ubuntu-latest
