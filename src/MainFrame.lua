@@ -22,6 +22,7 @@ function MainFrame_OnEvent(self, event, ...)
 
 			if count >= 10 then
 				macroBtn:SetAttribute("macrotext1", "/use " .. v)
+				message("Merged " .. v .. "to Awakened")
 			end
 		end
 	end
