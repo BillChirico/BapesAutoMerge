@@ -9,4 +9,4 @@
 ## Interface-Wrath: 30401
 ## X-Curse-Project-ID: 820429
 
-MainFrame.lua
+src/BapesAutoMerge.lua
