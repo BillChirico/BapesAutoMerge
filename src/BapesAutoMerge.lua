@@ -10,6 +10,7 @@ local MergeItems = {
 local macroBtn = CreateFrame("Button", "myMacroButton", UIParent, "SecureActionButtonTemplate")
 
 function MainFrame_OnEvent(self, event, ...)
+	print(event)
 	if event == "WORLD_MAP_OPEN" then
 		message("Open!")
 	end
@@ -22,7 +23,7 @@ function MainFrame_OnEvent(self, event, ...)
 
 			if count >= 10 then
 				macroBtn:SetAttribute("macrotext1", "/use " .. v)
-				message("Merged " .. v .. "to Awakened")
+				message("Ready to merge " .. v .. " to Awakened")
 			end
 		end
 	end

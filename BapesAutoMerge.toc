@@ -1,4 +1,4 @@
-## Title: Bapes Auto Merge
+## Title: BapesAutoMerge
 ## Version: 1.0
 ## Author: Bapes
 ## Notes: Auto merge rousing elements into awakened.
@@ -7,6 +7,6 @@
 ## Interface-Classic: 11403
 ## Interface-BCC: 20504
 ## Interface-Wrath: 30401
+## X-Curse-Project-ID: 820429
 
 MainFrame.lua
-MainFrame.xml
