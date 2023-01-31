@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# WowAddOnStudio Solution File, Format Version 11.00
+VisualStudioVersion = 17.4.33213.308
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E6E1D386-69D8-4755-9E61-0950293915FC}") = "BapesAutoMerge", "BapesAutoMerge\BapesAutoMerge.wowproj", "{0D8551D8-676A-49C8-B501-4537640B8E6B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Default|Any CPU = Default|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0D8551D8-676A-49C8-B501-4537640B8E6B}.Default|Any CPU.ActiveCfg = Default|Any CPU
+		{0D8551D8-676A-49C8-B501-4537640B8E6B}.Default|Any CPU.Build.0 = Default|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DE0CA4EE-7FF1-4AEB-9EF9-25766BDE834B}
+	EndGlobalSection
+EndGlobal
