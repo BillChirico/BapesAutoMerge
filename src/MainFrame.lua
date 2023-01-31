@@ -1,23 +1,28 @@
--- Author      : Bill Chirico
--- Create Date : 1/31/2023 12:35:04 AM
+local MergeItems = {
+	[190322] = "Rousing Order",
+	[190315] = "Rousing Earth",
+	[190330] = "Rousing Decay",
+	[190328] = "Rousing Frost",
+	[190320] = "Rousing Fire",
+	[190326] = "Rousing Air"
+};
 
-
-function MainFrame_OnLoad()
-	
-end
+local macroBtn = CreateFrame("Button", "myMacroButton", UIParent, "SecureActionButtonTemplate")
 
 function MainFrame_OnEvent(self, event, ...)
-	if(event == "WORLD_MAP_OPEN") then
+	if event == "WORLD_MAP_OPEN" then
 		message("Open!")
 	end
-end
 
-function SecureCmdUseItem(name, bag, slot, target)
-	if ( bag ) then
-		C_Container.UseContainerItem(bag, slot, target);
-	elseif ( slot ) then
-		UseInventoryItem(slot, target);
-	else
-		UseItemByName(name, target);
+	if event == "BAG_NEW_ITEMS_UPDATED" and not InCombatLockdown() then
+		macroBtn:RegisterForClicks("AnyUp", "AnyDown")
+		macroBtn:SetAttribute("macrotext1", "/raid zomg a left click!")
+		for k, v in pairs(MergeItems) do
+			local count = GetItemCount(k)
+
+			if count >= 10 then
+				macroBtn:SetAttribute("macrotext1", "/use " .. v)
+			end
+		end
 	end
 end

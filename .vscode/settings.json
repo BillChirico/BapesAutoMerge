@@ -1,0 +1,20 @@
+{
+    "Lua.diagnostics.globals": [
+        "message",
+        "SecureCmdUseItem",
+        "SlashCmdList",
+        "StaticPopupDialogs",
+        "QuestDetailAcceptButton_OnClick",
+        "UISpecialFrames",
+        "GossipOptionSort",
+        "DEFAULT_CHAT_FRAME",
+        "QuestDetailDeclineButton_OnClick",
+        "QuestFrame",
+        "StaticPopup_Show",
+        "QuestUtil",
+        "SelectGossipOption",
+        "GossipFrame",
+        "FauxScrollFrame_Update",
+        "FauxScrollFrame_GetOffset"
+    ]
+}
