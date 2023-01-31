@@ -13,23 +13,13 @@ jobs:
     steps:
       - name: Clone
         uses: actions/checkout@v3.3.0
-        with:
-          fetch-depth: 0
-        
-      - name: Set Working Directory
-        run: |
-          cd ./src
-          ls
 
-      - name: Update TOC
-        uses: p3lim/toc-interface-updater@v2
+      - name: Package
+        uses: BigWigsMods/packager@v2.0.3
         with:
-          base: mainline
+           args: -d false 
 
-      - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v4.2.3
+      - uses: actions/upload-artifact@v3.1.2
         with:
-          title: Update TOC
-          commit-message: Update TOC
-          branch: update-toc
-          delete-branch: true
+          name: Addon
+          path: /home/runner/work/BapesAutoMerge/BapesAutoMerge/.release/*.zip

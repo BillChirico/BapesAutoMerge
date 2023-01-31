@@ -4,18 +4,14 @@ on:
   schedule:
     - cron: 0 12 * * *
     
-  push:
-    branches: [ "master" ]
-    
-  pull_request:
-    branches: [ "master" ]
-
 jobs:
   run:
     runs-on: ubuntu-latest
     steps:
       - name: Clone
         uses: actions/checkout@v3.3.0
+        with:
+          fetch-depth: 0
         
       - name: Set Working Directory
         run: |
