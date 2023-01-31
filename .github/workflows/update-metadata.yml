@@ -19,7 +19,8 @@ jobs:
         
       - name: Set Working Directory
         run: |
-          cd src
+          cd ./src
+          ls
 
       - name: Update TOC
         uses: p3lim/toc-interface-updater@v2
