@@ -1,8 +1,0 @@
-## Title: Bapes Auto Merge
-## Version: 1.0
-## Author: Bapes
-## Interface: 100005
-## X-Compatible-With: 100005
-## Notes: Auto merge rousing elements into awakened.
-
-Main Frame.xml

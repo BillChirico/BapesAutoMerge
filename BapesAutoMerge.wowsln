@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # WowAddOnStudio Solution File, Format Version 11.00
 VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{E6E1D386-69D8-4755-9E61-0950293915FC}") = "BapesAutoMerge", "BapesAutoMerge\BapesAutoMerge.wowproj", "{0D8551D8-676A-49C8-B501-4537640B8E6B}"
+Project("{E6E1D386-69D8-4755-9E61-0950293915FC}") = "BapesAutoMerge", "src\BapesAutoMerge.wowproj", "{0D8551D8-676A-49C8-B501-4537640B8E6B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{6D0E9751-28A2-4697-A57E-A11C0CFD2451}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

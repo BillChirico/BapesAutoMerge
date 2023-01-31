@@ -12,13 +12,15 @@
   <ItemGroup>
     <Content Include="BapesAutoMerge.toc">
       <SubType>TableOfContents</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Frame.xml">
-      <SubType>Frame</SubType>
-    </Content>
-    <Content Include="Frame.lua">
+    <Content Include="BapesAutoMerge.toc" />
+    <Content Include="MainFrame.lua">
       <SubType>Code</SubType>
-      <DependentUpon>Frame.xml</DependentUpon>
+      <DependentUpon>MainFrame.xml</DependentUpon>
+    </Content>
+    <Content Include="MainFrame.xml">
+      <SubType>Frame</SubType>
     </Content>
   </ItemGroup>
   <Import Project="$(DevEnvDir)\Extensions\Tools\MSBuild\AddonStudio\Wow\3.0\WowAddonStudio.targets" />

@@ -1,12 +1,41 @@
 <Ui xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.blizzard.com/wow/ui/">
-	<Script file="Frame.lua" />
-	<Frame name="Frame1" inherits="BackdropTemplate" parent="UIParent" toplevel="true" enableMouse="true">
-		<Size x="200" y="200" />
+	<Script file="MainFrame.lua" />
+	<Frame name="MainFrame" inherits="BackdropTemplate" parent="UIParent" toplevel="true" movable="true">
+		<Size x="208" y="208" />
 		<Anchors>
-			<Anchor point="CENTER" />
+			<Anchor point="TOPLEFT">
+				<Offset x="578" y="-296" />
+			</Anchor>
 		</Anchors>
 		<KeyValues>
 			<KeyValue key="backdropInfo" value="BACKDROP_DIALOG_32_32" keyType="string" type="global" />
 		</KeyValues>
+		<TitleRegion setAllPoints="true">
+			<Size>
+				<AbsDimension x="0" y="30" />
+			</Size>
+			<Anchors>
+				<Anchor point="TOPLEFT" />
+				<Anchor point="TOPRIGHT" />
+			</Anchors>
+		</TitleRegion>
+		<HitRectInsets>
+			<AbsInset left="1" right="1" top="1" bottom="1" />
+		</HitRectInsets>
+		<Scripts>
+			<OnLoad inherit="prepend">
+				self:RegisterForDrag("LeftButton")
+				MainFrame_OnLoad()
+			</OnLoad>
+			<OnDragStart>
+				self:StartMoving()
+			</OnDragStart>
+			<OnDragStop>
+				self:StopMovingOrSizing()
+			</OnDragStop>
+			<OnEvent>
+				MainFrame_OnEvent()
+			</OnEvent>
+		</Scripts>
 	</Frame>
 </Ui>
