@@ -13,14 +13,11 @@ jobs:
     steps:
       - name: Clone
         uses: actions/checkout@v3.3.0
-        
-#       - name: Set Working Directory
-#         run: |
-#           cd ./src
-#           ls
 
       - name: Package
         uses: BigWigsMods/packager@v2.0.3
+        with:
+           args: -d false 
 
       - uses: actions/upload-artifact@v3.1.2
         with:
