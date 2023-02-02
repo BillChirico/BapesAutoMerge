@@ -59,7 +59,7 @@ end
 
 function ShowMergeButton()
 	macroBtn:SetPoint("CENTER")
-	macroBtn:SetSize(100, 50)
+	macroBtn:SetSize(150, 50)
 	macroBtn:SetMovable(true)
 	macroBtn:EnableMouse(true)
 	macroBtn:Show()
