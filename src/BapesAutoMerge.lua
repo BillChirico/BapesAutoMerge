@@ -40,10 +40,7 @@ function f:BAG_NEW_ITEMS_UPDATED(...)
 			local count = GetItemCount(itemID)
 
 			if count >= 10 then
-				macroBtn:SetText(string.format("Merge %s", itemName))
-				macroBtn:SetAttribute("macrotext", string.format("/use %s", itemName))
-				print(string.format("Ready to merge %s to Awakened", itemName))
-				ShowMergeButton()
+				ShowMergeButton(itemName)
 			end
 		end
 
@@ -53,6 +50,7 @@ function f:BAG_NEW_ITEMS_UPDATED(...)
 			local count = GetItemCount(itemID)
 
 			if count >= 10 then
+				ShowMergeButton(itemName)
 				hide = false
 			end
 		end
@@ -63,7 +61,10 @@ function f:BAG_NEW_ITEMS_UPDATED(...)
 	end
 end
 
-function ShowMergeButton()
+function ShowMergeButton(itemName)
+	macroBtn:SetText(string.format("Merge %s", itemName))
+	macroBtn:SetAttribute("macrotext", string.format("/use %s", itemName))
+	print(string.format("Ready to merge %s to Awakened", itemName))
 	macroBtn:SetPoint("CENTER")
 	macroBtn:SetSize(150, 50)
 	macroBtn:SetMovable(true)
