@@ -35,7 +35,6 @@ function f:ADDON_LOADED(...)
 end
 
 function f:BAG_NEW_ITEMS_UPDATED(...)
-	print("BAG_NEW_ITEMS_UPDATED")
 	if not InCombatLockdown() then
 		for itemID, itemName in pairs(MergeItems) do
 			local count = GetItemCount(itemID)
