@@ -13,6 +13,7 @@ local macroBtn = CreateFrame("Button", string.format("%s_MergeItemMacroButton", 
 	"SecureActionButtonTemplate, UIPanelButtonTemplate")
 
 macroBtn:RegisterForClicks("AnyUp", "AnyDown")
+macroBtn:SetAttribute("type", "macro")
 
 local f = CreateFrame("FRAME")
 f:RegisterEvent("ADDON_LOADED")
@@ -34,14 +35,14 @@ function f:ADDON_LOADED(...)
 end
 
 function f:BAG_NEW_ITEMS_UPDATED(...)
+	print("BAG_NEW_ITEMS_UPDATED")
 	if not InCombatLockdown() then
 		for itemID, itemName in pairs(MergeItems) do
 			local count = GetItemCount(itemID)
 
 			if count >= 10 then
-
 				macroBtn:SetText(string.format("Merge %s", itemName))
-				macroBtn:SetAttribute("macrotext1", string.format("/use %s", itemName))
+				macroBtn:SetAttribute("macrotext", string.format("/use %s", itemName))
 				print(string.format("Ready to merge %s to Awakened", itemName))
 				ShowMergeButton()
 			end
