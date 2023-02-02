@@ -17,7 +17,7 @@ macroBtn:RegisterForClicks("AnyUp", "AnyDown")
 local f = CreateFrame("FRAME")
 f:RegisterEvent("ADDON_LOADED")
 f:SetPoint("CENTER")
-f:SetSize(100, 50)
+f:SetSize(150, 50)
 f:SetMovable(true)
 f:EnableMouse(true)
 f:RegisterEvent("BAG_NEW_ITEMS_UPDATED")
@@ -44,6 +44,14 @@ function f:BAG_NEW_ITEMS_UPDATED(...)
 				macroBtn:SetAttribute("macrotext1", string.format("/use %s", itemName))
 				print(string.format("Ready to merge %s to Awakened", itemName))
 				ShowMergeButton()
+			end
+		end
+
+		for itemID, itemName in pairs(MergeItems) do
+			local count = GetItemCount(itemID)
+
+			if count < 10 then
+				macroBtn:Hide()
 			end
 		end
 	end
