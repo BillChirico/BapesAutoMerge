@@ -47,12 +47,18 @@ function f:BAG_NEW_ITEMS_UPDATED(...)
 			end
 		end
 
+		local hide = true
+
 		for itemID, itemName in pairs(MergeItems) do
 			local count = GetItemCount(itemID)
 
-			if count < 10 then
-				macroBtn:Hide()
+			if count >= 10 then
+				hide = false
 			end
+		end
+
+		if hide then
+			macroBtn:Hide()
 		end
 	end
 end
