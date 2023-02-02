@@ -43,23 +43,35 @@ function f:BAG_NEW_ITEMS_UPDATED(...)
 				ShowMergeButton(itemName)
 			end
 		end
-
-		local hide = true
-
-		for itemID, itemName in pairs(MergeItems) do
-			local count = GetItemCount(itemID)
-
-			if count >= 10 then
-				ShowMergeButton(itemName)
-				hide = false
-			end
-		end
-
-		if hide then
-			macroBtn:Hide()
-		end
 	end
 end
+
+macroBtn:HookScript("OnClick", function()
+	local hide = true
+
+	for itemID, itemName in pairs(MergeItems) do
+		local count = GetItemCount(itemID)
+
+		if count >= 10 then
+			ShowMergeButton(itemName)
+			hide = false
+		end
+	end
+
+	if hide then
+		macroBtn:Hide()
+	end
+end)
+
+macroBtn:SetScript("OnDragStart", function(self, button)
+	self:StartMoving()
+	print("OnDragStart", button)
+end)
+
+macroBtn:SetScript("OnDragStop", function(self)
+	self:StopMovingOrSizing()
+	print("OnDragStop")
+end)
 
 function ShowMergeButton(itemName)
 	macroBtn:SetText(string.format("Merge %s", itemName))
@@ -69,5 +81,6 @@ function ShowMergeButton(itemName)
 	macroBtn:SetSize(150, 50)
 	macroBtn:SetMovable(true)
 	macroBtn:EnableMouse(true)
+	macroBtn:RegisterForDrag("LeftButton")
 	macroBtn:Show()
 end
