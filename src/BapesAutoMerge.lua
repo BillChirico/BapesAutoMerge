@@ -43,8 +43,6 @@ function f:BAG_NEW_ITEMS_UPDATED(...)
 				ShowMergeButton(itemName)
 			end
 		end
-	else
-		macroBtn:Hide()
 	end
 end
 
