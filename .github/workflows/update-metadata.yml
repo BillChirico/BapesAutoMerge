@@ -19,7 +19,7 @@ jobs:
           ls
 
       - name: Update TOC
-        uses: p3lim/toc-interface-updater@v2
+        uses: p3lim/toc-interface-updater@v3
         with:
           base: mainline
 
